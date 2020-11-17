@@ -30,6 +30,7 @@
 		"@nextcloud/dialogs": "^2.0.1",
 		"@nextcloud/router": "^1.2.0",
 		"@nextcloud/vue": "^2.6.8",
+		"@nextcloud/vue-dashboard": "^1.0.1",
 		"vue": "^2.6.12"
 	},
 	"browserslist": [
@@ -69,6 +70,7 @@
 		"vue-loader": "^15.9.3",
 		"vue-template-compiler": "^2.6.12",
 		"webpack": "^4.44.2",
-		"webpack-cli": "^3.3.12"
+		"webpack-cli": "^3.3.12",
+		"webpack-merge": "^5.1.4"
 	}
 }
