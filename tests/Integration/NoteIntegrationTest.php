@@ -1,15 +1,15 @@
 <?php
 
-namespace OCA\NotesTutorial\Tests\Integration\Controller;
+namespace OCA\test\Tests\Integration\Controller;
 
 use OCP\AppFramework\App;
 use OCP\IRequest;
 use PHPUnit\Framework\TestCase;
 
 
-use OCA\NotesTutorial\Db\Note;
-use OCA\NotesTutorial\Db\NoteMapper;
-use OCA\NotesTutorial\Controller\NoteController;
+use OCA\test\Db\Note;
+use OCA\test\Db\NoteMapper;
+use OCA\test\Controller\NoteController;
 
 class NoteIntegrationTest extends TestCase {
 	private $controller;
@@ -17,7 +17,7 @@ class NoteIntegrationTest extends TestCase {
 	private $userId = 'john';
 
 	public function setUp(): void {
-		$app = new App('notestutorial');
+		$app = new App('test');
 		$container = $app->getContainer();
 
 		// only replace the user id

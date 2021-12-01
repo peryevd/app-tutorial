@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\NotesTutorial\Service;
+namespace OCA\test\Service;
 
 class NoteNotFound extends \Exception {
 }

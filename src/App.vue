@@ -1,28 +1,28 @@
 <template>
-	<div id="content" class="app-notestutorial">
+	<div id="content" class="app-test">
 		<AppNavigation>
 			<AppNavigationNew v-if="!loading"
-				:text="t('notestutorial', 'New note')"
+				:text="t('test', 'New note')"
 				:disabled="false"
-				button-id="new-notestutorial-button"
+				button-id="new-test-button"
 				button-class="icon-add"
 				@click="newNote" />
 			<ul>
 				<AppNavigationItem v-for="note in notes"
 					:key="note.id"
-					:title="note.title ? note.title : t('notestutorial', 'New note')"
+					:title="note.title ? note.title : t('test', 'New note')"
 					:class="{active: currentNoteId === note.id}"
 					@click="openNote(note)">
 					<template slot="actions">
 						<ActionButton v-if="note.id === -1"
 							icon="icon-close"
 							@click="cancelNewNote(note)">
-							{{ t('notestutorial', 'Cancel note creation') }}
+							{{ t('test', 'Cancel note creation') }}
 						</ActionButton>
 						<ActionButton v-else
 							icon="icon-delete"
 							@click="deleteNote(note)">
-							{{ t('notestutorial', 'Delete note') }}
+							{{ t('test', 'Delete note') }}
 						</ActionButton>
 					</template>
 				</AppNavigationItem>
@@ -37,13 +37,13 @@
 				<textarea ref="content" v-model="currentNote.content" :disabled="updating" />
 				<input type="button"
 					class="primary"
-					:value="t('notestutorial', 'Save')"
+					:value="t('test', 'Save')"
 					:disabled="updating || !savePossible"
 					@click="saveNote">
 			</div>
 			<div v-else id="emptycontent">
 				<div class="icon-file" />
-				<h2>{{ t('notestutorial', 'Create a note to get started') }}</h2>
+				<h2>{{ t('test', 'Create a note to get started') }}</h2>
 			</div>
 		</AppContent>
 	</div>
@@ -103,11 +103,11 @@ export default {
 	 */
 	async mounted() {
 		try {
-			const response = await axios.get(generateUrl('/apps/notestutorial/notes'))
+			const response = await axios.get(generateUrl('/apps/test/notes'))
 			this.notes = response.data
 		} catch (e) {
 			console.error(e)
-			showError(t('notestutorial', 'Could not fetch notes'))
+			showError(t('test', 'Could not fetch notes'))
 		}
 		this.loading = false
 	},
@@ -169,13 +169,13 @@ export default {
 		async createNote(note) {
 			this.updating = true
 			try {
-				const response = await axios.post(generateUrl('/apps/notestutorial/notes'), note)
+				const response = await axios.post(generateUrl('/apps/test/notes'), note)
 				const index = this.notes.findIndex((match) => match.id === this.currentNoteId)
 				this.$set(this.notes, index, response.data)
 				this.currentNoteId = response.data.id
 			} catch (e) {
 				console.error(e)
-				showError(t('notestutorial', 'Could not create the note'))
+				showError(t('test', 'Could not create the note'))
 			}
 			this.updating = false
 		},
@@ -186,10 +186,10 @@ export default {
 		async updateNote(note) {
 			this.updating = true
 			try {
-				await axios.put(generateUrl(`/apps/notestutorial/notes/${note.id}`), note)
+				await axios.put(generateUrl(`/apps/test/notes/${note.id}`), note)
 			} catch (e) {
 				console.error(e)
-				showError(t('notestutorial', 'Could not update the note'))
+				showError(t('test', 'Could not update the note'))
 			}
 			this.updating = false
 		},
@@ -199,15 +199,15 @@ export default {
 		 */
 		async deleteNote(note) {
 			try {
-				await axios.delete(generateUrl(`/apps/notestutorial/notes/${note.id}`))
+				await axios.delete(generateUrl(`/apps/test/notes/${note.id}`))
 				this.notes.splice(this.notes.indexOf(note), 1)
 				if (this.currentNoteId === note.id) {
 					this.currentNoteId = null
 				}
-				showSuccess(t('notestutorial', 'Note deleted'))
+				showSuccess(t('test', 'Note deleted'))
 			} catch (e) {
 				console.error(e)
-				showError(t('notestutorial', 'Could not delete the note'))
+				showError(t('test', 'Could not delete the note'))
 			}
 		},
 	},

@@ -1,9 +1,9 @@
 <?php
 
-namespace OCA\NotesTutorial\Controller;
+namespace OCA\test\Controller;
 
-use OCA\NotesTutorial\AppInfo\Application;
-use OCA\NotesTutorial\Service\NoteService;
+use OCA\test\AppInfo\Application;
+use OCA\test\Service\NoteService;
 use OCP\AppFramework\ApiController;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\IRequest;
