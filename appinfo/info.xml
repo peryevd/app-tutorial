@@ -7,12 +7,12 @@
     <description><![CDATA[This is a tutorial app for taking notes to demonstrate the Nextcloud API]]></description>
     <version>18.0.0</version>
     <licence>agpl</licence>
-    <author mail="dev@bernhard-posselt.com" >Bernhard Posselt</author>
+    <author mail="peryevd1@gmail.com" >Dima Peruev</author>
     <namespace>test</namespace>
     <category>office</category>
-    <bugs>https://github.com/nextcloud/app-tutorial</bugs>
+    <bugs>https://github.com/peryevd/app-tutorial</bugs>
     <dependencies>
-        <nextcloud min-version="19" max-version="22"/>
+        <nextcloud min-version="22" max-version="22"/>
     </dependencies>
     <navigations>
         <navigation>

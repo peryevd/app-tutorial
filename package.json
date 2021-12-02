@@ -2,18 +2,18 @@
 	"name": "test",
 	"description": "A simple Nextcloud app tutorial for building a notes app",
 	"version": "19.0.0",
-	"author": "Julius Härtl <jus@bitgrid.net",
+	"author": "Dima Peruev <peryevd1@gmail.com>",
 	"contributors": [
-		"John Molakvoæ <skjnldsv@protonmail.com>"
+		"Dima Peruev <peryevd1@gmail.com>"
 	],
 	"bugs": {
-		"url": "https://github.com/nextcloud/app-tutorial/issues"
+		"url": "https://github.com/peryevd/app-tutorial"
 	},
 	"repository": {
-		"url": "https://github.com/nextcloud/app-tutorial",
+		"url": "https://github.com/peryevd/app-tutorial",
 		"type": "git"
 	},
-	"homepage": "https://github.com/nextcloud/app-tutorial",
+	"homepage": "https://github.com/peryevd/app-tutorial",
 	"license": "agpl",
 	"private": true,
 	"scripts": {
