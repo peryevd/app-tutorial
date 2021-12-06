@@ -2,7 +2,7 @@
 	<div id="content" class="app-test">
 		<AppNavigation>
 			<AppNavigationNew v-if="!loading"
-				:text="t('test', 'New note')"
+				:text="t('test', 'New element')"
 				:disabled="false"
 				button-id="new-test-button"
 				button-class="icon-add"
@@ -10,19 +10,19 @@
 			<ul>
 				<AppNavigationItem v-for="note in notes"
 					:key="note.id"
-					:title="note.title ? note.title : t('test', 'New note')"
+					:title="note.title ? note.title : t('test', 'New element')"
 					:class="{active: currentNoteId === note.id}"
 					@click="openNote(note)">
 					<template slot="actions">
 						<ActionButton v-if="note.id === -1"
 							icon="icon-close"
 							@click="cancelNewNote(note)">
-							{{ t('test', 'Cancel note creation') }}
+							{{ t('test', 'Cancel element creation') }}
 						</ActionButton>
 						<ActionButton v-else
 							icon="icon-delete"
 							@click="deleteNote(note)">
-							{{ t('test', 'Delete note') }}
+							{{ t('test', 'Delete element') }}
 						</ActionButton>
 					</template>
 				</AppNavigationItem>
@@ -32,6 +32,7 @@
 			<div v-if="currentNote">
 				<input ref="title"
 					v-model="currentNote.title"
+					style="margin-top: 40px"
 					type="text"
 					:disabled="updating">
 				<textarea ref="content" v-model="currentNote.content" :disabled="updating" />
@@ -43,7 +44,7 @@
 			</div>
 			<div v-else id="emptycontent">
 				<div class="icon-file" />
-				<h2>{{ t('test', 'Create a note to get started') }}</h2>
+				<h2>{{ t('test', 'Create a element to get started') }}</h2>
 			</div>
 		</AppContent>
 	</div>

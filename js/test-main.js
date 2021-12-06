@@ -17873,6 +17873,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -45851,7 +45852,7 @@ var render = function() {
           !_vm.loading
             ? _c("AppNavigationNew", {
                 attrs: {
-                  text: _vm.t("test", "New note"),
+                  text: _vm.t("test", "New element"),
                   disabled: false,
                   "button-id": "new-test-button",
                   "button-class": "icon-add"
@@ -45869,7 +45870,9 @@ var render = function() {
                   key: note.id,
                   class: { active: _vm.currentNoteId === note.id },
                   attrs: {
-                    title: note.title ? note.title : _vm.t("test", "New note")
+                    title: note.title
+                      ? note.title
+                      : _vm.t("test", "New element")
                   },
                   on: {
                     click: function($event) {
@@ -45897,7 +45900,7 @@ var render = function() {
                               _vm._v(
                                 "\n\t\t\t\t\t\t" +
                                   _vm._s(
-                                    _vm.t("test", "Cancel note creation")
+                                    _vm.t("test", "Cancel element creation")
                                   ) +
                                   "\n\t\t\t\t\t"
                               )
@@ -45916,7 +45919,7 @@ var render = function() {
                             [
                               _vm._v(
                                 "\n\t\t\t\t\t\t" +
-                                  _vm._s(_vm.t("test", "Delete note")) +
+                                  _vm._s(_vm.t("test", "Delete element")) +
                                   "\n\t\t\t\t\t"
                               )
                             ]
@@ -45947,6 +45950,7 @@ var render = function() {
                   }
                 ],
                 ref: "title",
+                staticStyle: { "margin-top": "40px" },
                 attrs: { type: "text", disabled: _vm.updating },
                 domProps: { value: _vm.currentNote.title },
                 on: {
@@ -45995,7 +45999,7 @@ var render = function() {
               _c("div", { staticClass: "icon-file" }),
               _vm._v(" "),
               _c("h2", [
-                _vm._v(_vm._s(_vm.t("test", "Create a note to get started")))
+                _vm._v(_vm._s(_vm.t("test", "Create a element to get started")))
               ])
             ])
       ])
@@ -55160,4 +55164,4 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.mixin({
 
 /******/ })()
 ;
-//# sourceMappingURL=test-main.js.map?v=0a706c422ca89d037e9d
+//# sourceMappingURL=test-main.js.map?v=8e4314180146bbb28b58
